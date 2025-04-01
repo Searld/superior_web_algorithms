@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/astar.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>A*</title>
+</head>
+<body >
+    <header>
+        <p>ALGORITHMS</p>
+    </header>
+    <div class="field-container">
+        <input type="text" id="sizeInput" oninput="sizeFieldChange()">
+        <div class="field" id="field">
+            <script src="createField.js"></script>
+        </div>
+        <button class="btn" style="margin-top: 30px; height: 30px;" onclick="calculateRoute()">Calculate</button>
+    </div>
+</body>
+</html>
