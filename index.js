@@ -1,1 +1,3 @@
-console.log('Happy developing ✨')
+function AStarPage() {
+    window.location.replace('./AStar/indexAstar.html');
+}
