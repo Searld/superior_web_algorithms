@@ -1,5 +1,5 @@
 .field {
-    width: 50%;
+    width: 500px;
     height: 500px;
     border: 2px solid #42394d;
     border-radius: 10px;
@@ -60,12 +60,30 @@
     border-radius: 10px;
 }
 
+.input-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50%;
+}
+
+.clear-img {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    margin-bottom: 15px;
+}
+
 input {
     margin-bottom: 20px;
     height: 30px;
+    width: 100px;
     background-color: #1b1229;
     border-radius: 5px;
     border: 2px solid #42394d;
     text-align: center;
-    color: #c9c9c9;
+    color: white;
 }
