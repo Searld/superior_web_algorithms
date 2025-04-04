@@ -114,6 +114,7 @@ async function sizeFieldChange()
             let divElement = document.createElement("div");
             divElement.addEventListener('contextmenu',  selectStartOrEnd, false);
             divElement.addEventListener('click',  selectUnavailableCells);
+            divElement.id = ''+ j + i + '' ;
             if(maze[i][j] === true)
                 divElement.className = 'cell-available';
             else
@@ -148,7 +149,6 @@ async function sizeFieldChange()
          }
      }
      matrix.push(newList);
-
      let response = await fetch(urlFindRoute, {
          method: 'POST',
          headers: {'Content-Type': 'application/json'},
@@ -158,15 +158,41 @@ async function sizeFieldChange()
      drawRoute(data);
  }
 
-function drawRoute(data)
+async function drawRoute(data)
 {
     if(data !== null)
     {
+        console.log(data)
         const cells = field.children;
-        let indexes = data['indexes'];
+        let steps = data['steps'];
 
-        for (let i = 0; i < indexes.length - 1; i++) {
-            cells[indexes[i].x + indexes[i].y * sizeField].className = "cell-rout";
+        const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+        for (let j = 0; j < steps.length-1; j++)
+        {
+            let openBank = steps[j]['openBank'];
+            let currentCell = steps[j]['currentCell'];
+
+            await sleep(200);
+            for (let i = 0; i < openBank.length; i++)
+            {
+                let cell =  cells.namedItem(''+ openBank[i].x + openBank[i].y + '');
+                if(cell.className !== 'cell-open-bank')
+                    cell.className = 'cell-open-bank';
+                await sleep(200);
+            }
+
+            await sleep(350);
+            let cell =  cells.namedItem(''+ currentCell.x + currentCell.y + '');
+            cell.className = 'cell-current';
+        }
+        let indexes = data['route']['indexes'];
+        console.log(indexes.x);
+        for (let j = 0; j < indexes.length-1; j++)
+        {
+            await sleep(200);
+            let cell =  cells.namedItem(''+ indexes[j].x + indexes[j].y + '');
+            cell.className = 'cell-route';
         }
     }
 }

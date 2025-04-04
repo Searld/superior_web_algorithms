@@ -52,12 +52,34 @@
     border-radius: 10px;
 }
 
-.cell-rout {
+.cell-route {
     cursor: pointer;
     background-color: #3a2d57;
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    animation-name: route-appearing;
+    animation-duration: 1s;
+}
+.cell-current {
+    cursor: pointer;
+    background-color: #221e29;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    animation-name: current-appearing;
+    animation-duration: 0.7s;
+}
+
+.cell-open-bank {
+    cursor: pointer;
+    background-color: #0a0512;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid rgba(58, 45, 87, 1);
+    animation-name: border-appearing;
+    animation-duration: 0.7s;
 }
 
 .input-div {
@@ -66,6 +88,33 @@
     align-items: center;
     position: relative;
     width: 50%;
+}
+
+@keyframes current-appearing {
+    from {
+        background-color: #0a0512;
+    }
+    to {
+        background-color: #221e29;
+    }
+}
+
+@keyframes route-appearing {
+    from {
+        background-color: #221e29;
+    }
+    to {
+        background-color: #3A2D57FF;
+    }
+}
+
+@keyframes border-appearing {
+    from {
+        border: 2px solid rgba(58, 45, 87, 0);
+    }
+    to {
+        border: 2px solid rgba(58, 45, 87, 1);
+    }
 }
 
 .clear-img {
