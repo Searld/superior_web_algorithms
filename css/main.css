@@ -52,6 +52,7 @@ header p {
     cursor: pointer;
     transition: 1s;
 }
+
 .btn:hover {
     border: none;
     border-radius: 5px;
@@ -63,6 +64,32 @@ header p {
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
 }
+
+.btn-cancel {
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 25px;
+    background: #963c3c;
+    color: #140f1a;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.btn-cancel:hover {
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 25px;
+    background: #c95f5f;
+    color: #140f1a;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
 .algo {
     width: 420px;
     height: 220px;
@@ -97,4 +124,3 @@ header p {
     margin-left: auto;
     margin-bottom: 10px;
 }
-

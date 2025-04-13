@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/ant.css">
+    <script src="geneticScript.js"></script>
+    <title>Ant</title>
+</head>
+<body >
+<header>
+    <p>ALGORITHMS</p>
+</header>
+<div class="canvas-container">
+    <canvas id="canvas" width="800" height="500" onclick="canvasClick(event)"
+            class="drawCanvas"></canvas>
+    <div class="controls">
+        <button class="btn" style="margin-top: 30px; height: 30px;" onclick="drawRoute()">Calculate</button>
+        <button class="btn-cancel" style="margin-top: 30px; height: 30px; margin-left: 20px;" onclick="clearCanvas()">Clear</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
