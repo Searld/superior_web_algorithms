@@ -5,18 +5,33 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/astar.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        window.onload = function () {
+            let container = document.getElementsByClassName("field-container")[0];
+            container.classList.add("animated");
+
+        }
+
+
+    </script>
     <title>A*</title>
 </head>
 <body >
     <header>
-        <p>ALGORITHMS</p>
+        <p>AStar.</p>
     </header>
-    <div class="field-container">
-
-        <div class="field" id="field">
-            <script src="createField.js"></script>
+    <div style="width: 100%; display: inline-block; justify-content: center; align-items: center;">
+        <div class="field-container">
+            <input type="text" id="sizeInput" oninput="sizeFieldChange()" >
+            <div class="gradient-border">
+                <div class="field" id="field">
+                    <script src="createField.js"></script>
+                </div>
+            </div>
+            <button class="btn-main" style="margin-top: 30px; height: 40px;" onclick="calculateRoute()">Calculate</button>
+            <button class="btn-secondary" style="margin-top: 30px; height: 40px; margin-left: 10px;" onclick="clearField()">Clear</button>
         </div>
-        <button class="btn" style="margin-top: 30px; height: 30px;" onclick="calculateRoute()">Calculate</button>
+
     </div>
 </body>
 </html>

@@ -173,7 +173,7 @@ async function drawRoute(data)
             let openBank = steps[j]['openBank'];
             let currentCell = steps[j]['currentCell'];
 
-            await sleep(100);
+            await sleep(50);
             for (let i = 0; i < openBank.length; i++)
             {
                 let cell =  cells.namedItem(''+ openBank[i].x + openBank[i].y + '');
@@ -182,7 +182,7 @@ async function drawRoute(data)
                 await sleep(100);
             }
 
-            await sleep(150);
+            await sleep(120);
             let cell =  cells.namedItem(''+ currentCell.x + currentCell.y + '');
             cell.className = 'cell-current';
         }

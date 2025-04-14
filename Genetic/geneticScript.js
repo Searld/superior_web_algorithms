@@ -24,14 +24,14 @@ function canvasClick(event) {
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
-    context.fillStyle = "#3a2d57";
-    context.strokeStyle = "#42394d";
-    context.lineWidth = 3;
+    context.fillStyle = "transparent";
+    context.strokeStyle = "white";
+    context.lineWidth = 2;
     context.beginPath();
     context.arc(x, y, 20, 0, Math.PI * 2);
     context.stroke();
     context.fill();
-    vertices.push(new Vertex(x, y, 20, "#3a2d57", "#42394d"));
+    vertices.push(new Vertex(x, y, 20, "#3a2d57", "white"));
 }
 
 async function drawRoute() {
@@ -49,6 +49,8 @@ async function drawRoute() {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(verticesDTO),
     });
+
+    context.strokeStyle = "#9e9e9e";
 
     let route = await response.json();
     for (let i = 1; i < route.length; i++) {

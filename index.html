@@ -3,44 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <title>Algorithms</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="index.js"></script>
+
+    <link rel="stylesheet" href="./css/main.css">
 </head>
-<body>
-    <header>
-        <p>ALGORITHMS</p>
-    </header>
-    <div class="container">
-        <div class="algo">
-            <h3>A*</h3>
-            <p>The A* algorithm is a method for finding the shortest path on a graph that uses a heuristic function to estimate the cost of the path to the goal, combining a greedy approach taking into account the distance already traveled.</p>
-            <button class="btn" onclick="AStarPage()">Test it</button>
+<body data-bs-spy="scroll" data-bs-target="#navbar">
+    <nav id="navbar" class="navbar fixed-top navbar-expand-lg">
+        <div class="container-fluid">
+            <ul class="navbar-nav me-auto ms-3 mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <span class="navbar-brand">Searld & Krauveiss</span>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-5 mb-2 mb-lg-0">
+                <li class="nav-item me-1">
+                    <a class="nav-link" href="#astar-section">AStar</a>
+                </li>
+                <li class="nav-item me-1">
+                    <a class="nav-link" href="#ant-section">Ant</a>
+                </li>
+                <li class="nav-item me-1">
+                    <a class="nav-link" href="#genetic-section">Genetic</a>
+                </li>
+                <li class="nav-item me-1">
+                    <a class="nav-link" href="#">Clasters</a>
+                </li>
+                <li class="nav-item me-1">
+                    <a class="nav-link" href="#">Neuro</a>
+                </li>
+                <li class="nav-item me-1">
+                    <a class="nav-link" href="#">Tree</a>
+                </li>
+            </ul>
         </div>
-        <div class="algo">
-            <h3>Сlustering algorithm</h3>
-            <p>The clustering algorithm groups objects into clusters so that objects are similar within one cluster and different between different clusters.</p>
-            <button class="btn">Test it</button>
+    </nav>
+    <script src="wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <section class="begin-section " id="begin-section">
+        <div class="container">
+            <div class="row justify-content-center align-items-center" style="height: 100vh;">
+                <div class="col-auto text-center">
+                    <h1 >Algorithms.</h1>
+                    <button class="btn-main" style="margin-bottom: 100px; margin-top: 50px;" onclick="window.location.href='#astar-section'">View all</button>
+                </div>
+            </div>
         </div>
-        <div class="algo">
-            <h3>Ant algorithm</h3>
-            <p>You place the points on the plane - the vertices of the graph. The algorithm builds a traveling salesman's path based on this</p>
-            <button class="btn">Test it</button>
+    </section>
+    <section class="algo-section" id="astar-section">
+        <div class="container px-5">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center mt-4 custom-header wow">AStar algorithm.</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mt-4">
+                    <img src="Img/astar.jpg" alt="" class="wow"/>
+                </div>
+                <div class="col mt-4 d-flex flex-column">  <!-- Добавлен flex-column -->
+                    <div class="row flex-grow-1">  <!-- flex-grow-1 для растягивания -->
+                        <div class="col-12">
+                            <p class="description wow">A* is a popular pathfinding and graph traversal algorithm that finds the shortest path between two nodes in a weighted graph.</p>
+                            <br>
+                            <p class="description wow">It combines the strengths of Dijkstra's algorithm (guaranteed shortest path) and Greedy Best-First Search (fast exploration using heuristics)</p>
+                        </div>
+                    </div>
+                    <div class="row mt-auto">
+                        <div class="col-12 d-flex justify-content-center">  <!-- Центрирование кнопки -->
+                            <button class="btn-secondary wow" onclick="window.location.href='AStar/indexAstar.html'">Test it</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="algo">
-            <h3>Genetic algorithm</h3>
-            <p>You arrange the vertices of the graph on the plane. Edge weights are the distances on the plane between the vertices. The algorithm builds a traveling salesman's path along this graph.</p>
-            <button class="btn">Test it</button>
+    </section>
+    <section class="algo-section2" id="ant-section">
+        <div class="container px-5">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center mt-4 custom-header wow">Ant algorithm.</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mt-4">
+                    <img src="Img/ant2.jpg" alt="" class="wow"/>
+                </div>
+                <div class="col mt-4 d-flex flex-column">
+                    <div class="row flex-grow-1">
+                        <div class="col-12">
+                            <p class="description wow">A* is a popular pathfinding and graph traversal algorithm that finds the shortest path between two nodes in a weighted graph.</p>
+                            <br>
+                            <p class="description wow">It combines the strengths of Dijkstra's algorithm (guaranteed shortest path) and Greedy Best-First Search (fast exploration using heuristics)</p>
+                        </div>
+                    </div>
+                    <div class="row mt-auto">
+                        <div class="col-12 d-flex justify-content-center">
+                            <button class="btn-secondary wow" onclick="window.location.href='Ant/indexAnt.html'">Test it</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="algo">
-            <h3>Decision tree</h3>
-            <p>You enter a training sample in csv text format, which is used to build a decision tree. Next, you can enter data in csv format to make a decision on the tree.</p>
-            <button class="btn" onclick="jopa()">Test it</button>
+    </section>
+    <section class="algo-section" id="genetic-section">
+        <div class="container px-5">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center mt-4 custom-header wow">Genetic algorithm.</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mt-4">
+                    <img src="Img/genetic.png" alt="" class="wow"/>
+                </div>
+                <div class="col mt-4 d-flex flex-column">
+                    <div class="row flex-grow-1">
+                        <div class="col-12">
+                            <p class="description wow">A* is a popular pathfinding and graph traversal algorithm that finds the shortest path between two nodes in a weighted graph.</p>
+                            <br>
+                            <p class="description wow">It combines the strengths of Dijkstra's algorithm (guaranteed shortest path) and Greedy Best-First Search (fast exploration using heuristics)</p>
+                        </div>
+                    </div>
+                    <div class="row mt-auto">
+                        <div class="col-12 d-flex justify-content-center">
+                            <button class="btn-secondary wow" onclick="window.location.href='Genetic/indexGenetic.html'">Test it</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="algo">
-            <h3>Neural network</h3>
-            <p>You draw a number on a 5x5 pixel field, and the algorithm shows you which number you entered.</p>
-            <button class="btn">Test it</button>
-        </div>
-    </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        document.querySelectorAll('#navbar .nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Обновляем активный пункт
+                document.querySelectorAll('#navbar .nav-link').forEach(item => item.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>

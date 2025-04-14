@@ -11,7 +11,6 @@ function Vertex(x, y, radius, color, borderColor) {
 }
 
 function canvasClick(event) {
-
     let canvas = document.getElementById("canvas");
     let context = canvas.getContext("2d");
 
@@ -19,14 +18,14 @@ function canvasClick(event) {
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
-    context.fillStyle = "#3a2d57";
-    context.strokeStyle = "#42394d";
-    context.lineWidth = 3;
+    context.fillStyle = "transparent";
+    context.strokeStyle = "white";
+    context.lineWidth = 2;
     context.beginPath();
     context.arc(x, y, 20, 0, Math.PI * 2);
     context.stroke();
     context.fill();
-    vertices.push(new Vertex(x, y, 20, "#3a2d57", "#42394d"));
+    vertices.push(new Vertex(x, y, 20, "transparent", "white"));
 }
 
 async function drawRoute() {
@@ -51,6 +50,8 @@ async function drawRoute() {
         body: JSON.stringify(matrix)
     });
     let route = await response.json();
+
+    context.strokeStyle = "#9e9e9e";
 
     for(let i = 1; i < route.length; i++) {
         let start = vertices[route[i-1]-1];

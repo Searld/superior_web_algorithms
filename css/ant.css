@@ -1,15 +1,13 @@
-.drawCanvas {
-    width: 800px;
-    height: 500px;
-    border: 2px solid #42394d;
-    background-color: #1b1229;
-    margin-top: 150px;
-    border-radius: 15px;
+canvas {
+    background-color: #0a0a0a;
+    border-radius: 10px;
     cursor: pointer;
+    display: block;
 }
 
 .canvas-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 110px;
 }

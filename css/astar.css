@@ -1,43 +1,62 @@
 .field {
     width: 500px;
     height: 500px;
-    border: 2px solid #42394d;
-    border-radius: 10px;
-    background-color: #1b1229;
+    background: #0a0a0a;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
     column-gap: 10px;
     row-gap: 10px;
     padding: 10px;
+    border-radius: 10px;
 }
 
 .field-container {
     width: 85%;
     height: 100%;
-    margin: 150px auto;
+    margin: 120px auto;
     justify-items: center;
+}
+
+.gradient-border {
+    background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(59, 160, 255, 1) 63%);
+    padding: 1px;
+    border-radius: 10px;
 }
 
 .cell-available {
     cursor: pointer;
-    background-color: #0a0512;
+    background-color: #1a1a1a;
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    position: relative;
+    top: 0;
+    transition: all ease 0.5s;
+}
+
+.cell-available:hover {
+    top: -6px;
+    box-shadow:0 0 15px #bfbfbf;
 }
 
 .cell-unavailable {
-    background-color: #8a3030;
+    background-color: white;
     cursor: pointer;
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    position: relative;
+    top: 0;
+    transition: all ease 0.5s;
+}
+.cell-unavailable:hover {
+    top: -6px;
+    box-shadow:0 0 15px #bfbfbf;
 }
 .cell-start {
     cursor: pointer;
-
-    background-color: #598a42;
+    background-color: #3BA0FFFF;
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -45,8 +64,7 @@
 
 .cell-end {
     cursor: pointer;
-
-    background-color: #7f7334;
+    background-color: #484ef7;
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -54,7 +72,7 @@
 
 .cell-route {
     cursor: pointer;
-    background-color: #3a2d57;
+    background-color: #86c3fc;
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -63,7 +81,7 @@
 }
 .cell-current {
     cursor: pointer;
-    background-color: #221e29;
+    background-color: #3b3b3b;
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -73,11 +91,11 @@
 
 .cell-open-bank {
     cursor: pointer;
-    background-color: #0a0512;
+    background-color: #0d0d0c;
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    border: 2px solid rgba(58, 45, 87, 1);
+    border: 2px solid white;
     animation-name: border-appearing;
     animation-duration: 0.7s;
 }
@@ -92,28 +110,28 @@
 
 @keyframes current-appearing {
     from {
-        background-color: #0a0512;
+        background-color: #0d0d0c;
     }
     to {
-        background-color: #221e29;
+        background-color: #3b3b3b;
     }
 }
 
 @keyframes route-appearing {
     from {
-        background-color: #221e29;
+        background-color: #3b3b3b;
     }
     to {
-        background-color: #3A2D57FF;
+        background-color: #86c3fc;
     }
 }
 
 @keyframes border-appearing {
     from {
-        border: 2px solid rgba(58, 45, 87, 0);
+        border: 2px solid rgba(255, 255, 255, 0);
     }
     to {
-        border: 2px solid rgba(58, 45, 87, 1);
+        border: 2px solid rgba(255, 255, 255, 1);
     }
 }
 
@@ -131,9 +149,37 @@ input {
     margin-bottom: 20px;
     height: 30px;
     width: 100px;
-    background-color: #1b1229;
+    background-color: #0a0a0a;
     border-radius: 5px;
-    border: 2px solid #42394d;
+    border: 1px solid white;
     text-align: center;
     color: white;
+}
+
+body {
+    background: radial-gradient(circle,rgba(15, 24, 36, 1) 0%, rgba(5, 5, 5, 1) 58%);
+}
+
+header p{
+    color: white;
+    background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(59, 160, 255, 1) 63%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.legend-container {
+    display: flex;
+    margin-left: 70px;
+}
+
+img {
+    width: 30px;
+    height: 30px;
 }
