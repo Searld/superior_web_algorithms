@@ -114,7 +114,7 @@ async function sizeFieldChange()
             let divElement = document.createElement("div");
             divElement.addEventListener('contextmenu',  selectStartOrEnd, false);
             divElement.addEventListener('click',  selectUnavailableCells);
-            divElement.id = ''+ j + i + '' ;
+            divElement.id = ''+ j + ' '+ i + '' ;
             if(maze[i][j] === true)
                 divElement.className = 'cell-available';
             else
@@ -126,7 +126,6 @@ async function sizeFieldChange()
     }
 }
  async function calculateRoute() {
-    console.log("nazhal");
      const cells = field.children;
      let matrix = [];
      let newList = [];
@@ -156,7 +155,6 @@ async function sizeFieldChange()
          body: JSON.stringify(matrix)
      });
      let data = await response.json();
-
      drawRoute(data);
  }
 
@@ -180,23 +178,14 @@ async function drawRoute(data)
         let steps = data['steps'];
 
         const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
+        console.log(steps);
         for (let j = 0; j < steps.length-1; j++)
         {
             let openBank = steps[j]['openBank'];
             let currentCell = steps[j]['currentCell'];
 
-            await sleep(50);
-            for (let i = 0; i < openBank.length; i++)
-            {
-                let cell =  cells.namedItem(''+ openBank[i].x + openBank[i].y + '');
-                if(cell.className !== 'cell-open-bank')
-                    cell.className = 'cell-open-bank';
-                await sleep(100);
-            }
-
             await sleep(120);
-            let cell =  cells.namedItem(''+ currentCell.x + currentCell.y + '');
+            let cell =  cells.namedItem(''+ currentCell.x + ' ' + currentCell.y + '');
             cell.className = 'cell-current';
         }
         let indexes = data['route']['indexes'];
@@ -204,7 +193,7 @@ async function drawRoute(data)
         for (let j = 0; j < indexes.length-1; j++)
         {
             await sleep(200);
-            let cell =  cells.namedItem(''+ indexes[j].x + indexes[j].y + '');
+            let cell =  cells.namedItem(''+ indexes[j].x + ' ' + indexes[j].y + '');
             cell.className = 'cell-route';
         }
     }
