@@ -115,7 +115,7 @@
           resDiv.innerHTML = `
           <div style="display:inline; align-items:center; justify-content:center; gap:10px;">
             <strong style="font-size:24px;">${headerLine}</strong>
-            <button id="toggleBtn" class="btn-toggle">Показать детали</button>
+            <button id="toggleBtn" class="btn-toggle">Show details</button>
           </div>
           <div id="details" style="display:none; margin-top:15px; text-align:center; line-height:1.4;">
             ${details.join('<br>')}
@@ -124,9 +124,9 @@
           document.getElementById('toggleBtn').onclick = function () {
             const d = document.getElementById('details');
             if (d.style.display === 'none') {
-              d.style.display = 'block'; this.textContent = 'Скрыть детали';
+              d.style.display = 'block'; this.textContent = 'Hide details';
             } else {
-              d.style.display = 'none'; this.textContent = 'Показать детали';
+              d.style.display = 'none'; this.textContent = 'Show details';
             }
           };
         }).catch(err => console.error('Ошибка:', err));

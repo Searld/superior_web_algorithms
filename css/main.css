@@ -165,3 +165,22 @@ img {
     animation-duration: 1s;
     animation-name: appear;
 }
+
+.gradient-border-done {
+    background: linear-gradient(90deg,rgba(43, 179, 154, 1) 0%, rgba(43, 179, 81, 1) 100%);
+    padding: 1px;
+    border-radius: 10px;
+    animation-duration: 1s;
+    animation-name: border-done;
+}
+
+@keyframes border-done {
+    from {
+        background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(59, 160, 255, 1) 63%);
+
+    }
+    to {
+        background: linear-gradient(90deg,rgba(43, 179, 154, 1) 0%, rgba(43, 179, 81, 1) 100%);
+
+    }
+}

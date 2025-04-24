@@ -157,15 +157,15 @@ async function sizeFieldChange()
      let data = await response.json();
      drawRoute(data);
  }
-
 async function drawRoute(data)
 {
     if(data !== null)
     {
+        let border = document.getElementById('gradient-border');
+
         if(data.route === null)
         {
             const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-            let border = document.getElementById('gradient-border');
             border.className = 'gradient-border-exception';
 
             await sleep(1000);
@@ -196,6 +196,7 @@ async function drawRoute(data)
             let cell =  cells.namedItem(''+ indexes[j].x + ' ' + indexes[j].y + '');
             cell.className = 'cell-route';
         }
+        border.className = 'gradient-border-done';
     }
 }
 
@@ -205,6 +206,8 @@ function clearField()
     for (let i = 0; i < cells.length; i++) {
         cells[i].className = 'cell-available';
     }
+    let border = document.getElementById('gradient-border');
+    border.className = 'gradient-border';
     isStartPlaced = false;
     isEndPlaced = false;
 }
