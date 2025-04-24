@@ -126,6 +126,7 @@ async function sizeFieldChange()
     }
 }
  async function calculateRoute() {
+    console.log("nazhal");
      const cells = field.children;
      let matrix = [];
      let newList = [];
@@ -155,6 +156,7 @@ async function sizeFieldChange()
          body: JSON.stringify(matrix)
      });
      let data = await response.json();
+
      drawRoute(data);
  }
 
@@ -162,7 +164,18 @@ async function drawRoute(data)
 {
     if(data !== null)
     {
-        console.log(data)
+        if(data.route === null)
+        {
+            const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+            let border = document.getElementById('gradient-border');
+            border.className = 'gradient-border-exception';
+
+            await sleep(1000);
+
+            border.className = 'gradient-border';
+
+            return;
+        }
         const cells = field.children;
         let steps = data['steps'];
 

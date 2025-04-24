@@ -1,3 +1,15 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"]
+{
+    -moz-appearance: textfield;
+}
+
 .field {
     width: 500px;
     height: 500px;
@@ -22,6 +34,23 @@
     background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(59, 160, 255, 1) 63%);
     padding: 1px;
     border-radius: 10px;
+}
+
+.gradient-border-exception {
+    background: linear-gradient(90deg,rgba(204, 39, 58, 1) 0%, rgba(163, 24, 108, 1) 100%);
+    padding: 1px;
+    border-radius: 10px;
+    transition: all .6s;
+    animation-name: border-exception;
+}
+
+@keyframes border-exception {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%    ;
+    }
 }
 
 .cell-available {
@@ -153,7 +182,10 @@ input {
     border-radius: 5px;
     border: 1px solid white;
     text-align: center;
+    font-weight: bold;
+    font-size: 20px;
     color: white;
+
 }
 
 body {
