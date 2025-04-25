@@ -74,7 +74,7 @@ async function drawRoute() {
                 edgesDict[(startIndex,endIndex)]  = 0.6;
                 edgesDict[(endIndex,startIndex)]  = 0.6;
             }
-            await sleep(40);
+            await sleep(20);
 
             context.beginPath();
             context.lineWidth = edgesDict[(startIndex,endIndex)] * 0.2;
@@ -83,9 +83,24 @@ async function drawRoute() {
             context.stroke();
         }
     }
-    border.className = "gradient-border-done";
-    console.log(border.className);
 
+    context.strokeStyle = "#3BA0FFFF";
+    let bestRoute = routes[routes.length-1];
+
+    for (let i = 1; i < bestRoute.length; i++) {
+        let start = vertices[bestRoute[i-1]-1];
+        let end = vertices[bestRoute[i]-1];
+        let startIndex = bestRoute[i-1]-1;
+        let endIndex = bestRoute[i]-1;
+
+        context.beginPath();
+        context.lineWidth = edgesDict[(startIndex,endIndex)] * 0.2;
+        console.log(context.lineWidth);
+        context.moveTo(start.x, start.y);
+        context.lineTo(end.x, end.y);
+        context.stroke();
+    }
+    border.className = "gradient-border-done";
 }
 
 function clearCanvas() {

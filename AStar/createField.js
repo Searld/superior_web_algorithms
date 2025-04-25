@@ -101,6 +101,7 @@ async function sizeFieldChange()
         field.style.columnGap = 0 + 'px';
         field.style.rowGap = 0 + 'px';
     }
+
     field.style.setProperty("grid-template-columns", 'repeat(' + sizeField + ', 1fr)');
     field.style.setProperty("grid-template-rows", 'repeat(' + sizeField + ', 1fr)');
 
@@ -181,18 +182,16 @@ async function drawRoute(data)
         console.log(steps);
         for (let j = 0; j < steps.length-1; j++)
         {
-            let openBank = steps[j]['openBank'];
             let currentCell = steps[j]['currentCell'];
 
-            await sleep(120);
+            await sleep(10);
             let cell =  cells.namedItem(''+ currentCell.x + ' ' + currentCell.y + '');
             cell.className = 'cell-current';
         }
         let indexes = data['route']['indexes'];
-        console.log(indexes.x);
         for (let j = 0; j < indexes.length-1; j++)
         {
-            await sleep(200);
+            await sleep(130);
             let cell =  cells.namedItem(''+ indexes[j].x + ' ' + indexes[j].y + '');
             cell.className = 'cell-route';
         }

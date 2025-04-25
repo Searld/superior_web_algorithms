@@ -38,11 +38,11 @@ async function drawRoute() {
     let canvas = document.getElementById("canvas");
     let context = canvas.getContext("2d");
     let verticesDTO = [];
+
     for (let i = 0; i < vertices.length; i++) {
         let vertexDTO = { x: vertices[i].x, y: vertices[i].y, id: i+1};
         verticesDTO.push(vertexDTO);
     }
-    console.log(verticesDTO);
 
     let response = await fetch(urlGetGeneticRoute, {
         method: 'POST',
